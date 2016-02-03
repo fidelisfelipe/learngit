@@ -179,3 +179,37 @@ Total 20 (delta 2), reused 0 (delta 0)<br>
 To https://github.com/fidelisfelipe/learngit.git<br>
    dd81114..c039860  master -> master<br>
 </code></pre>
+
+#Voltando um commit antigo sem commitar o presente
+
+##entao agora vou fazer uma alteração em um arquivo(poderiam ser vários), mas não quero fazer um commit dele, mas também não quero perder minha alteração, para isso vou fazer um commit temporário, voltar ao meu commit antigo, depois voltar ao presente e commitar o arquivo alterado...
+
+###vou visualizar de uma forma diferente meu estado atual do branch
+cmd>git log --graph --oneline --decorate<br>
+output><br>
+<pre><code>
+* 4db3b95 (HEAD -> master, learngit-github/master) mudança de arquivo de pacote
+* d250278 atualizando Readme.md
+* 479db06 atualizando Readme.md
+*   c039860 Merge branch 'master' of https://github.com/fidelisfelipe/learngit
+|\
+| * dd81114 Initial commit
+* f6b87bb primeiro commit - hello git
+</code></pre>
+
+###ver o status dele também
+cmd>git status<br>
+<pre><code>
+
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+</code></pre>
+
+###não está adicionado meu Readme com as alterações
