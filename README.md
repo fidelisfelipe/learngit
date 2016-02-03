@@ -180,6 +180,13 @@ To https://github.com/fidelisfelipe/learngit.git<br>
    dd81114..c039860  master -> master<br>
 </code></pre>
 
+###voltei ao passado e estou atualizando o arquivo que havia esquecido
+###utilizei o git stash que salvou meu readme sem commitar
+###com git stash list consigo ver o id do meu stash (estado salvo sem commit)
+###defini que iria para o ultimo salvamento do readme que era o commit d250278, então usei git checkout d250278
+output><br>
+<pre><code>HEAD is now at d250278... atualizando Readme.md</code></pre>
+<br>
 #Voltando um commit antigo sem commitar o presente
 
 ##entao agora vou fazer uma alteração em um arquivo(poderiam ser vários), mas não quero fazer um commit dele, mas também não quero perder minha alteração, para isso vou fazer um commit temporário, voltar ao meu commit antigo, depois voltar ao presente e commitar o arquivo alterado...
@@ -213,3 +220,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 </code></pre>
 
 ###não está adicionado meu Readme com as alterações
+
+###utilizei o git stash para salvar o estado
+###fiz um checkout para o commit que eu queria(ultima alteração ate o momento do readme)
+###alterei o readme
+###apliquei o que não estava salvo anteriormente com git stash apply stash@{0}
+###agora eu adicionei novamente o readme atualizado
