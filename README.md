@@ -226,3 +226,33 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ###alterei o readme
 ###apliquei o que não estava salvo anteriormente com git stash apply stash@{0}
 ###agora eu adicionei novamente o readme atualizado
+
+
+#Clone para SubFolder
+	git subtree add --prefix=dir --squash git@github.com:fidelisfelipe/ocjp.git master
+
+
+#Checkout de SubFolder Repo1 e Push Repo2
+
+	git config core.sparseCheckout true
+	git remote add repo1 git@github.com:fidelisfelipe/repo1.git
+	echo "dir1" >> .git/info/sparse-checkout
+	git pull repo1 master
+
+	rm -rf .git
+
+	git init
+
+	git config core.sparseCheckout true
+
+	echo "dir2" >> .git/info/sparse-checkout
+
+	git remote add repo2 git@github.com:fidelisfelipe/repo2.git
+
+	git pull repo2 master
+
+	shopt -s extglob; git mv -k dir1/* dir2/dir1
+
+	git add .
+
+	git push repo2 master
